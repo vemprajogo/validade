@@ -309,8 +309,7 @@ const ValidationControl = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    href="https://first-one-206644.framer.app/"
-                    target="_blank"
+                    href="/search-products"
                     rel="noopener noreferrer"
                     className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-orange transition-colors duration-300"
                   >
@@ -383,8 +382,7 @@ const ValidationControl = () => {
               >
                 <div className="flex flex-col py-2">
                   <a
-                    href="https://first-one-206644.framer.app/"
-                    target="_blank"
+                    href="/search-products"
                     rel="noopener noreferrer"
                     className="px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors duration-300"
                   >
