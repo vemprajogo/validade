@@ -247,7 +247,7 @@ const ValidationControl = () => {
           submittedAt: new Date().toISOString()
         };
         
-        const response = await fetch('https://n8n-sgo8ksokg404ocg8sgc4sooc.vemprajogo.com/webhook-test/comercial1', {
+        const response = await fetch('https://n8n-sgo8ksokg404ocg8sgc4sooc.vemprajogo.com/webhook/comercial1', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
