@@ -22,6 +22,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import logo from '@/assets/logo.png';
+import { NumericFormat } from 'react-number-format';
 
 const stores = [
   { id: '1', name: 'MATEUS SUPERMERCADOS S.A. - BALSAS' },
@@ -136,7 +137,8 @@ const ValidationControl = () => {
     code: '',
     description: '',
     batch: '',
-    quantity: ''
+    quantity: '',
+    price: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [storeOpen, setStoreOpen] = useState(false);
@@ -219,6 +221,16 @@ const ValidationControl = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Verifica se o código reduzido foi encontrado no banco de dados
+    if (formData.code && !codeDetails) {
+      toast({
+        variant: "destructive",
+        title: "Código reduzido inválido",
+        description: "O código informado não foi encontrado no banco de dados ou está incorreto. Por favor, verifique e tente novamente.",
+      });
+      return;
+    }
+    
     const isFormValid = Object.values(formData).every(value => value !== '') && date !== undefined;
     
     if (isFormValid) {
@@ -235,7 +247,7 @@ const ValidationControl = () => {
           submittedAt: new Date().toISOString()
         };
         
-        const response = await fetch('https://n8n-sgo8ksokg404ocg8sgc4sooc.vemprajogo.com/webhook/comercial1', {
+        const response = await fetch('https://n8n-sgo8ksokg404ocg8sgc4sooc.vemprajogo.com/webhook-test/comercial1', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -253,7 +265,8 @@ const ValidationControl = () => {
             code: '',
             description: '',
             batch: '',
-            quantity: ''
+            quantity: '',
+            price: ''
           });
           setDate(new Date());
           setCodeDetails(null);
@@ -287,6 +300,35 @@ const ValidationControl = () => {
   const getStoreNameById = (id: string) => {
     const store = stores.find(store => store.id === id);
     return store ? `${store.id} - ${store.name}` : '';
+  };
+
+  // Novo handler para o campo de preço
+  const handlePriceChange = (values: { value: string }) => {
+    const { value } = values;
+    // Remove todos os caracteres não numéricos
+    const numericValue = value.replace(/[^0-9]/g, '');
+    
+    // Se não houver valor, retorna vazio
+    if (!numericValue) {
+      setFormData(prev => ({ ...prev, price: '' }));
+      return;
+    }
+
+    // Adiciona zeros à esquerda se necessário para ter pelo menos 3 dígitos
+    const paddedValue = numericValue.padStart(3, '0');
+    
+    // Pega os dois últimos dígitos como centavos
+    const cents = paddedValue.slice(-2);
+    // Pega o resto como reais
+    const reais = paddedValue.slice(0, -2);
+    
+    // Formata o número com separadores
+    const formattedReais = reais.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    
+    // Combina reais e centavos
+    const formattedValue = `${formattedReais},${cents}`;
+    
+    setFormData(prev => ({ ...prev, price: formattedValue }));
   };
 
   return (
@@ -650,6 +692,30 @@ const ValidationControl = () => {
                     onChange={handleInputChange}
                     className="h-11 focus:ring-2 focus:ring-brand-orange/30 transition-all duration-300"
                     placeholder="Digite a quantidade"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="price" className="text-gray-700">
+                    Preço:
+                  </Label>
+                  <NumericFormat
+                    id="price"
+                    name="price"
+                    value={formData.price}
+                    onValueChange={handlePriceChange}
+                    prefix="R$ "
+                    decimalSeparator=","
+                    thousandSeparator="."
+                    decimalScale={2}
+                    fixedDecimalScale
+                    allowNegative={false}
+                    placeholder="R$ 0,00"
+                    inputMode="numeric"
+                    type="text"
+                    customInput={Input}
+                    className="h-11 focus:ring-2 focus:ring-brand-orange/30 transition-all duration-300"
+                    allowLeadingZeros
                   />
                 </div>
 

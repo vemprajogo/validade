@@ -402,7 +402,7 @@ const SearchProducts = () => {
                   rel="noopener noreferrer"
                   className="px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-orange transition-colors duration-300"
                 >
-                  Fazer Pesquisa
+                  Validade
                 </a>
                 <a
                   href="https://ferepresentacoes.com/"
