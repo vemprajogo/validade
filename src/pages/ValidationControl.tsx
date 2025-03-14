@@ -126,6 +126,7 @@ const stores = [
   { id: '526', name: 'MATEUS SUPERMERCADOS S.A. SUPER ALEMANHA' },
   { id: '537', name: 'MATEUS SUPERMERCADOS S.A. MIX BARREIRINHAS' },
   { id: '207', name: 'MATEUS SUPERMERCADOS S A SUPER BURITICUPU'},
+  { id: '311', name: 'ASSAI ATACADISTA NOVO ANGELIM'},
 ];
 
 const ValidationControl = () => {
