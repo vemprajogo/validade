@@ -133,6 +133,7 @@ const stores = [
   { id: '502', name: 'MATEUS SUPERMERCADOS S.A. - SUPER SANTA CLARA' },
   { id: '526', name: 'MATEUS SUPERMERCADOS S.A. SUPER ALEMANHA' },
   { id: '537', name: 'MATEUS SUPERMERCADOS S.A. MIX BARREIRINHAS' },
+  { id: '222', name: 'MIX MATEUS SUPERMERCADO - ROSARIO'},
 ];
 
 const SearchProducts = () => {
