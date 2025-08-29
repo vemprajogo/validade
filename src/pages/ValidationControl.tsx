@@ -66,7 +66,7 @@ const stores = [
   { id: '48', name: 'MATEUS SUPERMERCADOS SA - MIX PEDREIRAS' },
   { id: '49', name: 'MATEUS SUPERMERCADOS SA MIX CASTANHAL' },
   { id: '50', name: 'MATEUS SUPERMERCADOS S A MIX ABAETETUBA' },
-  { id: '51', name: 'MATEUS SUPERMERCADOS SA MIX MARITUBA' },
+  { id: '51', name: 'MATEUS SUPERMERCADOS SA SUPER MARITUBA' },
   { id: '52', name: 'MATEUS SUPERMERCADOS S. A. MIX ACAILANDIA' },
   { id: '91', name: 'MATEUS SUPERMERCADOS S.A. - MIX STA INES' },
   { id: '92', name: 'MATEUS SUPERMERCADOS S.A. - MIX BACURI' },
@@ -127,6 +127,11 @@ const stores = [
   { id: '537', name: 'MATEUS SUPERMERCADOS S.A. MIX BARREIRINHAS' },
   { id: '207', name: 'MATEUS SUPERMERCADOS S A SUPER BURITICUPU'},
   { id: '222', name: 'MIX MATEUS SUPERMERCADO - ROSARIO'},
+  { id: '531', name: 'MIX MATEUS SUPERMERCADO - MARITUBA'},
+  { id: '539', name: 'MIX MATEUS SUPERMERCADO - BACANGA'},
+  { id: '546', name: 'MATEUS SUPERMERCADO - SUPER REI DE FRANÇA'},
+  { id: '477', name: 'POSTERUS SUPERMERCADOS - PARQUE ATHENAS'},
+  { id: '218', name: 'MATEUS SUPERMERCADO - SUPER SAO RAIMUNDO'},
 ];
 
 const ValidationControl = () => {
