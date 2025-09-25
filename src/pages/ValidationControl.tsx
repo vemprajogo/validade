@@ -132,6 +132,9 @@ const stores = [
   { id: '546', name: 'MATEUS SUPERMERCADO - SUPER REI DE FRANÇA'},
   { id: '477', name: 'POSTERUS SUPERMERCADOS - PARQUE ATHENAS'},
   { id: '218', name: 'MATEUS SUPERMERCADO - SUPER SAO RAIMUNDO'},
+  { id: '548', name: 'MIX MATEUS  - MAGUARI'},
+  { id: '36', name: 'MATEUS SUPERMERCADO - SUPER JARDELANDIA'},
+  { id: '261', name: 'MIX MATEUS  - REDENCAO'},
 ];
 
 const ValidationControl = () => {
