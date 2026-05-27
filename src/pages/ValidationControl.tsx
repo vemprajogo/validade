@@ -135,6 +135,7 @@ const stores = [
   { id: '548', name: 'MIX MATEUS  - MAGUARI'},
   { id: '36', name: 'MATEUS SUPERMERCADO - SUPER JARDELANDIA'},
   { id: '261', name: 'MIX MATEUS  - REDENCAO'},
+  { id: '223', name: 'SUPER MATEUS  - DOCAS'},
 ];
 
 const ValidationControl = () => {
